@@ -1,0 +1,573 @@
+---
+layout: post
+title:  "GIS Tools"
+date:   2012-05-06 02:56:00
+categories: gis
+---
+
+<pre>
+GIS Tools
+
+PROJ.4 http://trac.osgeo.org/proj/
+  Cartographic Projections library (C)
+  + Command-line tools
+
+Proj4js http://trac.osgeo.org/proj4js/
+  JavaScript port of PROJ.4
+
+GEOS http://trac.osgeo.org/geos/
+  Geometry Engine, Open Source
+  C++ Port of JTS, implements OpenGIS Simple Features
+  + Python, Ruby bindings
+
+GDAL http://www.gdal.org/ (raster formats) OGR (vector formats)
+  C++ Geospatial Data Abstraction Libray
+  translator library for raster geospatial formats and vector formats
+  (OGR: Simple Features Library)
+  + Python, Ruby bindings
+  + Command-line tools
+
+GMT http://gmt.soest.hawaii.edu/
+  Generic Mapping Tools
+  Command-line tools for manipulating geographic/cartesian data sets.
+
+OSSIM http://www.ossim.org
+  Open Source Software Image Map
+  image processing (remote sensing, photogrammetry, ...)
+
+GRASS http://grass.itc.it/
+  Geographic Resources Analysis Support System
+  Cross-platform GIS
+
+QuantumGIS http://www.qgis.org/ (QGIS)
+  Desktop GIS, cross-platform
+  C++ / Python Plugins
+
+SAGA http://www.saga-gis.org/ http://sourceforge.net/projects/saga-gis/
+  System for Automated Geoscientific Analyses
+  GIS for Windows, Linux & FreeBSD; C++
+
+R http://www.r-project.org/
+  Statistical Computing Language
+
+FDO http://fdo.osgeo.org/
+  Feature Data Objects
+  API to access geodata (ArcSDE, MySQL, ODBC, SDF, SHP, WFS, WMS, GDAL, OGR, Oracle)
+  fdotoolbox https://github.com/jumpinjackie/fdotoolbox
+    Windows tool for managing geospatial data using FDO written in C#
+  Fdo2Fdo http://www.sl-king.com/Fdo2Fdo/fdo2fdo.html
+
+OTB http://orfeo-toolbox.org/otb/
+ Orfeo Toolbox (ORFEO: Optical and Radar Federated Earth Observation) from CNES
+ C++ library of image processing algorithms with comman line tools,
+ Python & Java APIs
+
+OpenEV http://openev.sourceforge.net/
+  C library & application for viewing and analysing raster and vector geospatial data
+  Windows / Linux
+
+Opticks http://opticks.org/confluence/display/opticks/Welcome+To+Opticks
+  Remonte Sensing/Imagery analysis (C++/Python)
+  Windows / Linux / Solaris
+
+GeographicLib http://sourceforge.net/projects/geographiclib/ http://geographiclib.sourceforge.net/
+  C++ library for geographic/geodesic conversions; command line tools & online converter
+
+UrbanSim http://www.urbansim.org/
+Urban simulation system. Originally in Java; reimplemented in 2005 in Python, using NumPy, based on a new Open Platform for Urban Simulation (OPUS);
+New version 2014 by Synthicity using PANDAS: https://github.com/synthicity/urbansim
+
+uDig http://udig.refractions.net/
+  GIS Framework for Eclipse (Java)
+
+JTS http://sourceforge.net/projects/jts-topo-suite/
+  Java Topology Suite
+  Java API for 2-dimensional linear geometry
+
+JGrass http://jgrass.wiki.software.bz.it/jgrass/JGrass_Wiki
+  Java Geographic Resources Analysis Support System
+  uDig based GIS using GRASS
+
+OpenJUMP http://www.openjump.org
+  GIS written in Java
+  + Python Plugins
+
+GeoTools http://www.geotools.org/
+  Java GIS Toolkit
+
+gvSIG http://www.gvsig.gva.es/index.php?id=gvsig&L=2
+  Generalitat Valenciana, Sistema d'Informació Geogràfica
+  GIS written in Java
+
+Kosmo http://www.opengis.es/index.php
+  SAIG (Sistemas Abiertos de Información Geográfica) S.L. / Universidad de Sevilla
+  GIS written in Java, based on JUMP GIS
+
+geomajas http://www.geomajas.org/
+  Java Web Mapping Framework
+
+TimeMap http://www.timemap.net/
+  Java web mapping with time filtering and map animation
+
+Whitebox Geospatial Analysis Tools http://www.uoguelph.ca/~hydrogeo/Whitebox/index.html
+  Open-source Java GIS
+
+ILWIS - Integrated Land and Water Information System
+  1984, ITC
+  http://52north.org/downloads/ilwis
+  Windows GIS/remote sensing, vector/raster based
+
+
+MapGuide Open Source http://mapguide.osgeo.org/
+  2005 Autodesk
+  Windows (Linux)
+
+Databases
+
+PostGIS http://postgis.refractions.net/
+  (spatial extensions for PostgreSQL)
+
+SpatiaLite http://www.gaia-gis.it/spatialite/
+  (spatial extensions for SQLite)
+
+GeoPackage http://www.geopackage.org/
+  OGC format for geospatial information based on SQLite. Usable in iOS, Android
+
+
+Geo Services
+
+MapServer http://mapserver.org/ (UMN MapServer -- University of Minnesota)
+  Map Server (C/C++)
+  +MapScript: scripting bindings for Python, Ruby, etc.
+
+GeoServer http://geoserver.org
+  OGC reference Map Server (Java)
+
+mapnik http://mapnik.org/
+  Map Server (C++)
+
+TileCache http://tilecache.org/
+  Python-based WMS-C/TMS server
+
+degree http://www.deegree.org/
+  Java OGC web services (WMS, WFS, CSW, WCS, WPS, WMTS)
+  (University of Bonn; INSPIRE)
+
+
+Web Client-side
+
+OpenLayers http://openlayers.org/
+  Javascript mapping library
+
+Leaflet http://leafletjs.com/
+  Javascript mapping library
+
+Polymaps http://polymaps.org/
+  Javascript mapping library
+
+jQuery Geo http://jquerygeo.com/
+  Javascript mapping library
+
+Cesium http://cesiumjs.org/
+  WebGL based JavaScript Virtual Globe (see below)
+
+MapBuilder http://communitymapbuilder.osgeo.org/
+  JavaScript mapping client
+
+worldKit http://worldkit.org/
+  Flash mapping client
+
+GeoExt http://www.geoext.org/
+  JavaScript toolkit that integrates OpenLayers and ExtJS
+
+timemap https://code.google.com/p/timemap/
+  JavaScript libray to use online maps with SIMILE timelines
+
+D3.js maps http://d3js.org/
+  http://www.jasondavies.com/maps/
+  http://datamaps.github.io/
+
+
+Web
+
+GeoDjango http://geodjango.org/
+  geographic web framework:
+  Python + Django + GEOS + PROJ.4 + GDAL + PostGIS/SpatiaLite
+
+MapFish http://www.mapfish.org/
+  web-mapping application framework:
+  Python + Pylons + ExtJS + OpenLayers + GeoExt
+
+MapBender http://www.mapbender.org
+  mapping for PHP
+
+MapLab http://www.maptools.org/maplab/
+  web-based tools to create and manage MapServer-based applications
+
+CartoWeb http://cartoweb.org/
+  PHP GIS for the Web
+
+MapGuide Open Source http://mapguide.osgeo.org/
+  web mapping platform, Windows/Linux with PHP .NET Java JavaScript APIS
+  derived from former Autdesk MapGuide
+  Uses SDF as native format
+
+-------------------------------------------------------
+
+GeoData:
+  http://wiki.openstreetmap.org/wiki/Main_Page
+  https://www.openstreetmap.org
+  http://www.cartociudad.es
+  http://www.inspire-geoportal.eu/
+  http://www.idee.es
+  http://www.sedecatastro.gob.es/
+  http://www.cnig.es/
+  http://en.wikipedia.org/wiki/GEOSS
+  http://www.mapabase.es/mapabase/
+  http://mapbox.com/
+  Google Maps https://maps.google.com/
+  CARTODB http://cartodb.com/
+  TomTom Map Toolkit http://developer.tomtom.com/
+
+-------------------------------------------------------
+
+Webs:
+http://www.mapjab.com/ MapJab
+  http://www.osgeo.org/ OSGeo -- Open Source Geospatial Foundation
+  http://www.freegis.org/ FreeGIS
+  http://refractions.net/ Refractions Research
+  http://www.opengeospatial.org/ OGC - Open Geospatial Consortium (OpenGIS).
+  http://www.maptools.org/ MapTools
+  http://gisandscience.com/
+  http://giswiki.hsr.ch/Geoconverter GeoConverter: online format conversion
+
+  Note: FOSS4G = Free and Open Source Software for Geospatial (OSGeo Conferences)
+
+  OSGeo (a foundation similar to Apache) supports and gathers these
+  projects among others
+    FDO
+    GDAL/OGR
+    GeoTools
+    GEOS
+    MetaCRS (PROJ.4, Proj4js, CS-Map, GeoTIFF, Proj4J
+    PostGIS
+    GRASS GIS
+    OSSIM
+    Quamtum GIS
+    gvSIG
+    MapServer
+    GeoServer
+    MapGuide Open Source
+    OpenLayers
+    MapFish
+    degree
+
+  Refractions Research products:
+    PostGIS
+    uDig
+    Geotools
+    Geoserver
+
+Interesting:
+  http://spatialreference.org
+  http://gislounge.com/ http://www.ordnancesurvey.co.uk/oswebsite/education-and-research/map-data-for-schools/gis-software-for-schools.html
+
+Synthicity products http://www.synthicity.com/
+  UrbanCanvas
+  GeoCanvas
+  UrbanSim (new 2013 version)
+  UDS (Urban Data Science) Toolkit
+  Pandana https://github.com/synthicity/pandana
+
+-------------------------------------------------------
+Packaged GIS Tools
+
+FWTools http://fwtools.maptools.org/
+  Open Source GIS Binary Kit for Windows and Linux
+MS4W http://www.maptools.org/ms4w/
+  MapServer for Windows
+OSGeo4W https://trac.osgeo.org/osgeo4w/
+  OSGeo binary distribution for Windows
+FGS Linux Installer http://maptools.org/fgs/
+  MapServer installer for Linux
+FOSS4G Toolkit for Mandriva http://wiki.osgeo.org/wiki/FOSS4G_Toolkit_for_Mandriva_2008
+Ubuntu GIS http://trac.osgeo.org/ubuntugis/
+Enterprise Linux GIS http://wiki.osgeo.org/wiki/Enterprise_Linux_GIS
+homebrew-osgeo4mac https://github.com/OSGeo/homebrew-osgeo4mac
+  OSGeo packages for OSX using HomeBrew
+
+OpenStreetMap Editors
+
+iD http://ideditor.com/
+  newest HTML5/JS online editor
+Potlatch http://wiki.openstreetmap.org/wiki/Potlatch/Primer
+  older Flash online editor
+JOSM https://josm.openstreetmap.de/
+  Java OpenStreetMap Editor (offline editor)
+Merkaartor http://merkaartor.be/
+  offline editor written in C++
+OpenStreetMap Tools
+Osmosis - http://wiki.openstreetmap.org/wiki/Osmosis
+  command line Java application for processing OSM data (OSM XML & PBF)
+osmconvert - http://wiki.openstreetmap.org/wiki/Osmconvert
+  tool (written in C) to convert and process OSM files (OSM XML, PBF, O5m)
+Osmium - http://wiki.openstreetmap.org/wiki/Osmium
+  C++ & JavaScript toolkit for working with OSM data (OSM XML & PBF)
+osm2pgsql - http://wiki.openstreetmap.org/wiki/Osm2pgsql
+  command line program to convert OSM data to PostGIS SQL (OSM XML & PBF)
+  patch to read O5m: http://wiki.openstreetmap.org/wiki/Osm2pgsql/o5m
+lmposm - http://imposm.org/
+  Tool to import OSM XML/PBF into PostGIS (Version 1, 2 written in Python; Version 3 in Go)
+osm2geo.js - https://gist.github.com/tecoholic/1396990
+  Converter from OSM XML to GeoJSON
+OpenStreetMap.jl - https://github.com/tedsteiner/OpenStreetMap.jl
+  Julia language package to read OSM XML
+  GDAL/OGR supports OSM XML and PBF
+Conversions information: http://wiki.openstreetmap.org/wiki/Converting_map_data_between_formats
+
+-------------------------------------------------------
+
+Virtual Globes
+
+NASA World Wind
+http://worldwind.arc.nasa.gov/
+Java - JOGL (OpenGL) - 2004
+
+Marble
+https://marble.kde.org/
+C++ - 2006
+
+ossimPlanet
+http://trac.osgeo.org/ossim/wiki/OssimPlanet
+C++ - OSG (OpenGL) (osgPlanet C++ library which uses OpenSceneGraph)
+
+gvSIG 3D [discontinued] (GeoViewer3D http://www.upv.es/upl/U0433582.pdf)
+http://gvsig3d.blogspot.com.es/
+C++/Java - OSG/JOGL (OpenGL)
+
+Google Earth
+http://earth.google.com
+C++ - OpenGL/DirectX - 2005 [Keyhole Earth Viewer: 2001-2004]
+
+ArcGIS Explorer
+http://www.esri.com/software/arcgis/explorer http://www.arcgis.com/explorer/
+
+EarthBrowser (Matt Giger)
+http://www.earthbrowser.com/
+1997
+
+OpenWebGlobe
+http://www.openwebglobe.org/
+JavaScript - WebGL
+
+Cesium
+http://cesiumjs.org/
+JavasScript - WebGL (library for online globes)
+
+WebGLEarth
+http://www.webglearth.com/
+JavaScript - WebGL
+
+Bing Maps (Live Search Maps, Windows Live Maps, Windows Live Local, MSN Virtual Earth)
+http://www.bing.com/maps/ - 2006
+
+osgEarth
+http://osgearth.org/
+C++ - OSG (OpenGL) - 2009
+
+Norkart Virtual Globe
+http://www.virtual-globe.info/
+Java - JOGL (OpenGL)
+
+Earth3D
+http://www.earth3d.org/
+C++/Java - OpenGL/JOGL
+
+Globe QuantumGIS plugin
+
+ArcGlobe (ArcGIS 3D Analyst extension application)
+http://www.esri.com/news/arcnews/summer03articles/introducing-arcglobe.html
+OpenGL
+
+3map http://www.ping.com.au/3map/
+
+QGisThreejs QuantumGIS plugin
+https://github.com/minorua/Qgis2threejs
+
+Celestia http://www.shatters.net/celestia/
+
+Maps (Apple) https://www.apple.com/osx/apps/#maps https://www.apple.com/ios/maps/
+Objective-C 2012
+
+earth http://earth.nullschool.net/
+MeteoEarth http://www.meteoearth.com/
+
+EarthViewer jQuery plugin http://codecanyon.net/item/earth-viewer-3d-globe/full_screen_preview/2283700
+jquery.earth-3d.js jQuery plugin http://sebastien.drouyer.com/jquery.earth-3d/
+Terrestrial Globe Flash http://earth.watype.net/en/globe/
+
+Historical/Other:
+Encarta Virtual Globe (Microsoft Encarta Atlas) http://encarta.msn.com/encnet/features/mapcenter/map.aspx
+  (1993-2009) (first edition: 1996?)
+Microsoft MapPoint http://www.microsoft.com/mappoint (2000-2014)
+  Microsoft Virtual Earth 3D http://www.microsoft.com/virtualearth/
+  MSN Maps & Directions http://mappoint.msn.com/
+  TerraServer http://terraserver.microsoft.com/
+WorldView http://www.pyxisinnovation.com/Products/worldview.html
+Software MacKiev's 3D Weather Globe & Atlas http://www.mackiev.com/3d_globe.html
+PMGlobe by Mike Cowlishaw http://speleotrove.com/pmglobe/ (1991)
+Home Planet by John Walker http://www.fourmilab.ch/homeplanet/homeplanet.html (1992)
+  (v2: 1994; v3: 1997)
+Earth and Moon Viewer https://www.fourmilab.ch/earthview/vplanet.html (<=1996)
+
+http://www.sourcepole.com/assets/2010/9/10/foss4g2010_virtual_globes.pdf
+http://en.wikipedia.org/wiki/Virtual_globe#List_of_virtual_globe_software
+
+Geographic 3D Viewers
+
+NViz (GRASS GIS module)
+  http://grass.osgeo.org/nviz/
+  for GRASS wxGUI, wxGUI.NViz is integrated as a 3D view mode in all map windows
+
+ArcScene (ArcGIS application)
+  OpenGL
+
+Demeter http://demeter.sourceforge.net/
+  Terrain rendering engine; uses OSG (OpenSceneGraph)
+
+3DEM http://www.hangsim.com/3dem/
+  Terrain visualization
+
+Commercial GIS
+
+ArcGIS http://www.esri.com/software/arcgis
+  1999 ESRI
+  Windows
+  ArcInfo - 1982 (ARC/INFO)
+  PRIMOS, VMS, DOS (PC ARC/INFO 1987), Solaris, AIX, UNIX, Windows
+  ArcView - 1991
+  Windows
+
+IDRISI http://www.clarklabs.org/
+  1987 J. Ronald Eastman, Clarck University
+  GIS/remote sensing (grid-based)
+  Windows
+
+ERDAS IMAGINE http://www.hexagongeospatial.com/products/remote-sensing/erdas-imagine
+  1978 - ERDAS 4 - Cromenco microcomputers (Z80)
+  1980 - ERDAS 400 - custom hardware
+  1982 - ERDAS 7 - DOS (IBM PC)
+  1991 - ERDAS IMAGINE - SunOS  UNIX
+  remote sensing, raster graphics
+  Windows
+
+MapInfo http://www.mapinfo.com/
+  1991
+  GIS
+  Windows
+
+AutoCAD Map 3D
+  1996 AutodDesk (AutoCAD R13)
+  1997 Release 2.0 (MAP2)  (AutoCAD R14)
+  1998 MAP 3 (also World Map, MapGuide, GIS Design Server)
+  2000 MAP 4 (MAP 2000/2000i) (AutoCAD 2000/2000i)
+  2001 MAP 5 (2002) (AutoCAD 2002)
+  2002 MAP 6 (AutoCAD 2002)
+  2003 MAP 2004 (MAP 6 on AutoCAD 2004)
+  2004 MAP 3D 2005
+  2006 MAP 3D 2006
+  2007 MAP 3D 2007 … 2015 MAP 3D 2015
+  http://www.autodesk.com/products/autocad-map-3d/overview
+
+Intergraph MGE (Modular GIS Environment)
+  1988 - based on MicroStation
+
+Geomedia http://www.hexagongeospatial.com/products/gis/geomedia
+  1995 (Hexagon Geospatial, formerly Intergraph)
+  GIS
+  Windows
+
+Bentley Map
+  2007
+  http://www.bentley.com/en-US/Products/Bentley+Map/
+  Microstation GeoGraphics: http://www.bentley.com/en-US/Products/Bentley+Map/Migrating-to.htm
+  1996
+  1998 - Microstation Geographics 5.7
+  1999? - Microstation Geographics V7 (/J)
+  2002 - Microstation Geographics V8
+  2004 - Microstation Geographics 2004 Edition
+
+SmallWorld
+  1989 Dick Newell, Cambridge UK [2000 acquired by GE Energy]
+http://www.ge-energy.com/products/geospatial_systems_and_mobile_workforce/smallworld_geospatial_solutions.jsp
+http://geothought.blogspot.com.es/2008/12/smallworlds-20th-birthday.html
+  Solaris; Windows, HP-UX, IBM AIX, Linux, …
+
+(NOTE: GRASS GIS: 1984)
+
+Online Services
+
+CartoDB http://cartodb.com/
+Cloud service (free/paid), online editor;
+Source code (Ruby): https://github.com/CartoDB/cartodb
+  Uses PostGIS with own extensions, Mapnik, Node JS for tiler & APIs, Ruby on Rails for UI, ...
+
+MapBox https://www.mapbox.com/
+
+GeoCommons http://geocommons.com/
+
+iSpatial http://www.t-sciences.com/product/ispatial-2
+
+Google Maps Engine x (to be closed 2016) https://www.google.com/enterprise/mapsearth/
+  http://mangomap.com/blog/post/108790608911/the-end-of-google-maps-engine-causes-mass
+
+Mango https://mangomap.com/
+
+Mappy http://en.mappy.com/
+
+National Geographic MapMaker http://mapmaker.education.nationalgeographic.com/
+
+Here https://www.here.com/
+
+MIT GeoWeb https://arrowsmith.mit.edu/mitogp
+
+GIS Cloud http://www.giscloud.com/
+
+QGisCloud http://qgiscloud.com/
+
+batchgeo http://batchgeo.com/
+
+Do a Map http://www.doamap.com/
+
+WorldMap http://worldmap.harvard.edu/
+
+ScribbleMaps http://scribblemaps.com/
+
+MapJam https://mapjam.com/
+
+ZeeMaps http://www.zeemaps.com/
+
+Click2Map http://www.click2map.com/
+
+MapQuest http://www.mapquest.com/
+
+MapLine https://mapline.com/
+
+ACME Mapper http://mapper.acme.com/
+
+GmapGIS http://www.gmapgis.com/
+
+MapFab http://www.mapfab.com/editor/new
+
+Target Map http://www.targetmap.com/
+
+thematicmapping http://thematicmapping.org/engine/
+
+ikimap http://www.ikimap.com/
+Mapfaire http://www.mapfaire.com/
+
+doarama http://www.doarama.com/
+
+OpenGeo Suite http://boundlessgeo.com/solutions/opengeo-suite/
+
+</pre>
