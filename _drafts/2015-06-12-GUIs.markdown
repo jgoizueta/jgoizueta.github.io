@@ -1,0 +1,131 @@
+---
+layout: post
+title:  "Graphical User Interfaces"
+date:   2015-06-12 16:19:00
+categories: gui
+---
+
+# GUI History
+
+1963
+: Sketchpad - Ivan Sutherland
+
+1964
+: NLS (oN Line System) - Douglas Engelbart SRI Augmentation Research Center
+
+1973
+: Xerox Alto - PARC (Palo Alto Research Center)
+
+1980
+: PERQ1 (3RCC-Three Rivers Computer Corporation/ICL)
+
+1981
+: Xerox 8010 Information System (Star Workstation) - Xerox PARC [US]
+
+1981
+: Apollo Computer Display Manager (DM) / AEGIS (DOMAIN/OS)
+
+1982
+: Andrew Project Andre Window Manager (WM)
+
+1982
+: Rob Pike (Bell Labs) Blit - mpx / Unix; mux / Unix
+
+1983
+: SGI IRIS 1000
+
+1983-06
+: Apple Lisa  - Lisa Office System / Lisa OS
+
+1983
+: Stanford University W Window System
+
+1983-11
+: VisiCorp VisiOn
+
+1984-01:
+: Apple Macintosh - Finder / System Software
+
+
+1984-05  MIT X Window System
+198x     MSX-View
+1985-02  DRI GEM/1 (GEM Desktop 1.0) / DOS
+1985     Amiga Workbench / AmigaOS
+1985-11  Microsoft Windows
+1985-11  Atari 520ST - Atari TOS (DRI GEM) - GEMDOS
+1986-09  Apple IIgs - Apple GS/OS
+1986-03  DRI GEM/2
+1986-03  Berkeley Softworks (GeoWorks) GEOS - Commodore 64
+1986     Tandy DeskMate
+1986     Sun NeWS (Network extensible Window System)
+1986     Acorn BBC - Mater Compact
+1987     Acorn Arthur (RISC OS)
+1987-09  X11 (X Window System)
+1987-12  Microsoft Windows 2
+1988-10  Microsoft OS/2 Presentation Manager
+1988-10  NeXT Computer (NeXTSTEP, )
+1988-11  DRI GEM/3
+1990     DESQview/X (DVX)
+1990-05  Microsoft Windows 3.0
+1992     Plan 9 (8½, rio)
+
+
+|          | System  | Creator
+|:---------|:--------|:---------|
+| 1963     | Sketchpad | Ivan Sutherland |
+| 1964     | NLS (oN Line System) | Douglas Engelbart SRI Augmentation Research Center |
+| 1973     | Xerox Alto | PARC (Palo Alto Research Center) |
+| 1980     | PERQ1  | 3RCC-Three Rivers Computer Corporation/ICL  |
+| 1981     | Xerox 8010 Information System (Star Workstation)  | Xerox PARC [US] |
+| 1981     | Apollo Computer Display Manager (DM)  | AEGIS (DOMAIN/OS)  |
+| 1982     | Andrew Project Andre Window Manager (WM)  |  |
+| 1982     | Blit - mpx / Unix; mux / Unix  |  Rob Pike (Bell Labs) |
+| 1983     | SGI IRIS 1000 | Silicon Graphics Inc. |
+| 1983-06  | Apple Lisa - Lisa Office System / Lisa OS | Apple |
+|========
+
+[guis]:    http://toastytech.com/guis/index.html
+[history]: http://en.wikipedia.org/wiki/History_of_the_graphical_user_interface
+[msapple]: http://www.theoligarch.com/microsoft_vs_apple_history.htm
+
+
+
+##Widget Toolkits
+
+### table
+
+| 1983 | ***Lisa Toolbox*** [Lisa OS] (evolution of Desktop Libraries?) |
+|      | Pascal |
+| 1984 | ***Macintosh Toolbox*** [Mac OS] |
+|      | 68000 Assembler (Pascal, C) |
+| 1985 |  Xt Toolkit Intrinsics (Xt, X toolkit) [X Window System] |
+|      | C |
+| 1985 | ***Windows API*** [Microsoft Windows] |
+|      | C |
+| 1985 | ***MacApp*** [Mac OS] |
+|      | Object Pascal (application framework) |
+| 1988 | ***OLIT*** (OPEN LOOK intrinsics Toolkit) [X Window System] |
+|      | C (OpenLook specification implementation using Xt Toolkit Intrinsics) |
+
+
+### definitions list
+
+1983
+:  ***Lisa Toolbox*** [Lisa OS] (evolution of Desktop Libraries?)\\
+   Pascal
+
+1984
+:  ***Macintosh Toolbox*** [Mac OS]\\
+   68000 Assembler (Pascal, C)
+
+1985
+:  ***Xt Toolkit Intrinsics*** (Xt, X toolkit) [X Window System]\\
+   C
+
+1985
+:  ***Windows API*** [Microsoft Windows]\\
+   C
+
+1985
+:  ***MacApp*** [Mac OS]\\
+   Object Pascal (application framework)

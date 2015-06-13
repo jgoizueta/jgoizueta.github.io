@@ -1,0 +1,737 @@
+---
+layout: post
+title:  "Closures"
+date:   2014-11-30 19:16:00
+categories: languages cheatsheet
+
+---
+
+Most languages the implement closures capture references to
+mutable variables in it lexical scope, so that if the captured
+variable's value change before the closure is executed, it will
+access the modified value.
+
+Some languages allow capturing the *value* of a variable so that
+the closure will not be affected by changes in the value of the
+original value, and some languages disallow capturing a variable
+that may change.
+
+A few languages allow both behaviours.
+
+Here are executable programs in a variety of languages to check
+these features.
+
+* This will become a table of contents
+{:toc}
+
+
+## Closures with mutable captured variables
+
+In the next examples the closures are shown to
+capture a mutable variable.
+
+### JavaScript
+
+```javascript
+a = 5;
+f = function(x) { return x+a };
+console.log(f(10)); // 15
+a = 100
+console.log(f(10)); // 110
+```
+
+### CoffeeScript
+
+{% highlight coffeescript %}
+a = 5
+f = (x)->x+a
+console.log f(10) # 15
+a = 100
+console.log f(10) # 110
+{% endhighlight %}
+
+### Dart
+
+{% highlight dart %}
+void main() {
+  var a = 5;
+  var f = (x) => x + a;
+  print(f(10)); // 15
+  a = 100;
+  print(f(10)); // 110
+}
+{% endhighlight %}
+
+### Ruby
+
+```ruby
+a = 5
+f = ->(x){x+a}
+puts f(10) # => 15
+a = 100
+puts f(10) # => 110
+```
+
+### Python
+
+```python
+a = 5
+f = lambda x: x+a
+print(f(10)) # 15
+a = 100
+print(f(10)) # 110
+```
+
+### Julia
+
+{% highlight julia %}
+a = 5
+f = (x) -> x+a
+print(f(10)) # 15
+a = 100
+print(f(10)) # 110
+{% endhighlight %}
+
+### Swift
+
+{% highlight swift %}
+var a = 5
+let f = { (x: Int) -> Int in x+a }
+println(f(10)) // 15
+a = 100
+println(f(10)) // 110
+{% endhighlight %}
+
+### C\#
+
+{% highlight csharp %}
+using System;
+public class Test
+{
+  delegate int f_type(int x);
+  public static void Main()
+  {
+    int a = 5;
+    f_type f = (x) => x+a;
+    System.Console.WriteLine(f(10)); // 15
+    a = 100;
+    System.Console.WriteLine(f(10)); // 110
+  }
+}
+{% endhighlight %}
+
+### Go
+
+{% highlight go %}
+package main
+import "fmt"
+func main(){
+	a := 5
+	f := func(x int) int { return x+a }
+	fmt.Println(f(10)) // 15
+	a = 100
+	fmt.Println(f(10)) // 110
+}
+{% endhighlight %}
+
+### Groovy
+
+```groovy
+def a = 5
+def f = { x -> x + a }
+println f(10) // 15
+a = 100
+println f(10) // 110
+```
+
+
+### R
+
+{% highlight r %}
+a <- 5
+f <- function(x)x+a
+cat("%d", f(10)) # 15
+a <- 100
+cat("%d",f(10)) # 110
+{% endhighlight %}
+
+### Perl 5
+
+{% highlight perl %}
+my $a = 5;
+my $f = sub { my $x = shift; return $x+$a };
+print $f->(10), "\n"; # 15
+$a = 100;
+print $f->(10), "\n"; # 110
+{% endhighlight %}
+
+### Perl 6
+
+{% highlight perl %}
+my $a = 5;
+my $f = -> $x { $x+$a };
+print $f(10), "\n"; # 15
+$a = 100;
+print $f(10), "\n"; # 110
+{% endhighlight %}
+
+### Lua
+
+{% highlight lua %}
+a = 5
+f = function(x,y) return x+a end
+print(f(10)) -- 15
+a = 100
+print(f(10)) -- 110
+{% endhighlight %}
+
+### Lisp (Scheme)
+
+This has been tested with BiwaScheme & guile.
+
+{% highlight lisp %}
+(define a 5)
+(define f (lambda (x) (+ x a)))
+(write (f 10)) (newline) ; 15
+(define a 100)
+(write (f 10)) (newline) ; 110
+{% endhighlight %}
+
+### Clojure
+
+```clojure
+(def a 5)
+(def f (fn [x] (+ x a)))
+(println (f 10)) ; 15
+(def a 100)
+(println (f 10)) ; 110
+```
+
+### Smalltalk
+
+{% highlight smalltalk %}
+a := 5.
+f := [ :x | x + a ].
+(f value: 10) printNl.
+a := 100.
+(f value: 10) printNl !
+{% endhighlight %}
+
+### Scala
+
+{% highlight scala %}
+object Main extends App {
+	var a = 5
+	val f = (x: Integer) => x+a
+	println(f(10)) // 15
+	a = 100
+	println(f(10)) // 110
+}
+{% endhighlight %}
+
+### Wolfram Language (Mathematica)
+
+{% highlight mathematica %}
+a = 5
+f = Function[x, x + a]
+Print[f[10]]   (* 15 *)
+a = 100
+Print[f[10]]   (* 110 * )
+{% endhighlight %}
+
+{% comment %}
+A space character is inserted in the final closing comment delimiter
+of the previous code to avoid breaking Atom's syntax highlight.
+{% endcomment %}
+
+### C++11 [&]
+
+This behaviour can be achieved in C++11
+using th `[&]` capture specification:
+
+```cpp
+#include <iostream>
+int main() {
+  int a = 5;
+  auto f = [&] (int x) { return x + a; }; // or [&a] ...
+  std::cout << f(10) << std::endl; // 15
+  a = 100;
+  std::cout << f(10) << std::endl; // 110
+  return 0;
+}
+```
+
+### PHP (>=5.3)
+
+```php
+$a = 5;
+$f = function($x) use(&$a) { return $x + $a; };
+echo $f(10); // 15
+echo "\n";
+$a = 100;
+echo $f(10); // 110
+echo "\n";
+```
+
+### C using GCC nested functions & statement expression
+
+```c
+#include <stdio.h>
+int main() {
+  int a = 5;
+  int (*f)(int x) = ({ int f_(int x) { return x+a; } &f_; });
+  printf("%d\n", (*f)(10)); /* 15 */
+  a = 100;
+  printf("%d\n", (*f)(10)); /* 110 * /
+  return 0;
+}
+```
+
+{% comment %}
+A space character is inserted in the final closing comment delimiter
+of the previous code to avoid breaking Atom's syntax highlight.
+{% endcomment %}
+
+### Maxima
+
+    a: 5;
+    f: lambda([x],x+a);
+    print(f(10)); /* 15 */
+    a: 100;
+    print(f(10)); /* 110 * /
+
+{% comment %}
+A space character is inserted in the final closing comment delimiter
+of the previous code to avoid breaking Atom's syntax highlight.
+{% endcomment %}
+
+### RPL
+
+    \<< 5 \-> A
+      \<< \<< A + \>> \-> F
+        \<< 10 F EVAL 100  @ 15
+            'A' STO
+            10 F EVAL \>>  @ 110
+      \>>
+    \>>
+    @ Using a 'compiled' variable
+    \<< 5 \<< \<-A + \>> \-> \<-A F
+      \<< 10 F EVAL 100  @ 15
+          '\<-A' STO
+          10 F EVAL \>>  @ 110
+      \>>
+    \>>
+
+### Factor
+
+Local variables must explicitly declared mutalbe with `!`
+
+{% highlight factor %}
+USING: kernel locals formatting math ;
+IN: test_closures
+:: test-closures ( -- )
+  5 :> a!
+  [ a + ] :> f
+  10 f call "%d\n" printf ! 15
+  100 a!
+  10 f call "%d\n" printf ! 110
+  ;
+{% endhighlight %}
+
+### HP PPL (HOME)
+
+Called from the HOME environment
+
+    #cas
+    Test() := BEGIN
+      LOCAL a := 5; // a could be global as well
+      LOCAL f := (x)->x+a;
+      PRINT(f(10)); // 15
+      a := 100;
+      PRINT(f(10)); // 110
+    END
+    #end
+    // in HOME: Test()
+
+## Closures which capture immutable values
+
+This includes cases in which the Language
+disallow mutable state to be captured in a closure.
+
+### Erlang
+
+Captured variable cannot be modified
+
+{% highlight erlang %}
+    -module(prog).
+    -export([main/0]).
+    main () ->
+      A = 5,
+      F = fun(X) -> X+A end,
+      io:fwrite(io_lib:format("F(10): ~p", [F(10)])). % F(10): 15
+{% endhighlight %}
+
+
+### Elixir
+
+Can rebind a captured variable, but no actual state change can occur.
+
+{% highlight elixir %}
+a = 5
+f = fn(x) -> x + a end
+IO.puts f.(10) # 15
+a = 100
+IO.puts f.(10) # 15
+{% endhighlight %}
+
+### Haskell
+
+There's no way a captured variable can be modified.
+
+{% highlight haskell %}
+module Main where
+a = 5
+f = \x -> x+a
+main = print (f 10) -- 15
+{% endhighlight %}
+
+Using `IORef` and `do` notation we might be able to simulate mutable captured variables.
+
+### OCaml
+
+{% highlight ocaml %}
+let a = 5;;
+let f x = x+a;;
+print_int(f 10);; (* 15 *)
+print_string("\n");;
+a = 100;;
+print_int(f 10);; (* 15 * )
+print_string("\n");;
+{% endhighlight %}
+
+{% comment %}
+A space character is inserted in the final closing comment delimiter
+of the previous code to avoid breaking Atom's syntax highlight.
+{% endcomment %}
+
+### Java 8
+
+Local variables referenced from a lambda expression must be final
+or effectively final.
+
+```java
+public class Test
+{
+  interface Ftype { public Integer call(Integer x); }
+  public static void main(String[] args)
+  {
+    Integer a = 5;
+    Ftype f = (x) -> x+a;
+    System.out.print(f.call(10)); // 15
+    // a = 100;    <-- this would provoke a compilation error
+    // System.out.print(f.call(10));
+  }
+}
+```
+
+### Java
+
+Using anonymous inner class; same situation as with Java 8 lambdas: a must be effectively final
+
+```java
+public class Test
+{
+  interface Ftype { public Integer call(Integer x); }
+  public static void main(String[] args)
+  {
+    final Integer a = 5; // in Java 7 this has to be declared final in 8 it is not necessary
+    Ftype f = new Ftype() {
+      public Integer call(Integer x) { return a+x; };
+    };
+    System.out.println(f.call(10));  // 15
+    // a = 100;    <-- this would provoke a compilation error even if a was not explicitly final
+    // System.out.println(f.call(10));
+  }
+}
+```
+
+### C++11 [=]
+
+```cpp
+#include <iostream>
+int main() {
+  int a = 5;
+  auto f = [=] (int x) { return x + a; }; // or [a] ...
+  std::cout << f(10) << std::endl; // 15
+  a = 100;
+  std::cout << f(10) << std::endl; // 15
+  return 0;
+}
+```
+
+### Objective-C
+
+Using the CLang blocks extension.
+
+{% highlight objectivec %}
+#import <Foundation/Foundation.h>
+int main(void) {
+  int a = 5;
+  int (^f)(int) = ^(int x) { return x + a; };
+  NSLog(@"%d", f(10)); /* 15 */
+  a = 100;
+  NSLog(@"%d", f(10)); /* 15 * /
+  return 0;
+}
+{% endhighlight %}
+
+{% comment %}
+A space character is inserted in the final closing comment delimiter
+of the previous code to avoid breaking Atom's syntax highlight.
+{% endcomment %}
+
+### C
+
+Using the CLang blocks extension.
+
+```c
+#include <stdio.h>
+int main() {
+  int a = 5;
+  int (^f)(int) = ^(int x) { return x + a; };
+  printf("%d\n", f(10)); /* 15 */
+  a = 100;
+  printf("%d\n", f(10)); /* 15 * /
+  return 0;
+}
+```
+
+{% comment %}
+A space character is inserted in the final closing comment delimiter
+of the previous code to avoid breaking Atom's syntax highlight.
+{% endcomment %}
+
+
+### GNU Octave
+
+    a = 5
+    f = @(x)x+a
+    disp(f(10)) # 15
+    a = 100
+    disp(f(10)) # 15
+
+### HP PPL (CAS)
+
+Called from the CAS environment.
+
+    #cas
+    Test() := BEGIN
+      LOCAL a := 5; // a could be global as well
+      LOCAL f := (x)->x+a;
+      PRINT(f(10)); // 15
+      a := 100;
+      PRINT(f(10)); // 15
+    END
+    #end
+    // in CAS: Test()
+
+## Techniques to inject immutable values in closures
+
+### CoffeeScript (do)
+
+{% highlight coffeescript %}
+a = 5
+f = do (a) -> (x) -> x+a
+console.log f(10) # 15
+a = 100
+console.log f(10) # 15
+{% endhighlight %}
+
+Note that this solution is of limited application: it frotects from
+rebounded variables, but not from mutable objects, e.g.:
+
+{% highlight coffeescript %}
+a = [5]
+f = do (a) -> (x) -> x+a[0]
+console.log f(10) # 15
+a[0] = 100
+console.log f(10) # 110 doh!
+{% endhighlight %}
+
+### Factor (curry)
+
+{% highlight factor %}
+USING: kernel locals formatting math ;
+IN: test_closures
+:: test-closures ( -- )
+  5 :> a!
+  a [ + ] curry :> f
+  10 f call "%d\n" printf ! 15
+  100 a!
+  10 f call "%d\n" printf ! 15
+  ;
+{% endhighlight %}
+
+### JavaScript
+
+The same limitations as in CoffeeScript apply here.
+
+```javascript
+a = 5;
+f = function(a) {
+  return function(x) { return x+a };
+}(a);
+console.log(f(10)); // 15
+a = 100
+console.log(f(10)); // 15
+```
+
+### Ruby
+
+This will work in Ruby 1.9.2 or later versions:
+
+```ruby
+def with_local(&blk)
+  Object.new.instance_exec(*blk.parameters.map{|kind, var| blk.binding.eval(var.to_s), &blk)
+end
+a = 5
+f = with_local { |a| ->(x){ x + a }  }
+puts f[10] # 15
+a = 100
+puts f[10] # 15
+```
+
+This is subject to the same limitations as CoffeeScript.
+Even if we use `dup` in `with_local`:
+
+```ruby
+def with_local(&blk)
+  Object.new.instance_exec(*blk.parameters.map{|kind, var| blk.binding.eval(var.to_s).tap{|x| x.dup rescue x}}, &blk)
+end
+```
+
+Since `dup` doesn't perform a deep copy, we can still mutate contents if we bury them deep enough:
+
+```ruby
+a = [[5]]
+f = with_local { |a| ->(x){ x + a[0][0] }  }
+puts f[10] # 15
+a[0][0] = 100
+puts f[10] # 110
+```
+
+For versios of Ruby earlier than 1.9.2 we'd hava to add another identifier;
+note that for Ruby < 1.9 the inner ‘a’ should be renamed.
+
+```ruby
+def with_local(*args)
+  yield *args.map(&:dup)
+end
+a = 5
+f = with_local(a) { |a| ->(x){ x + a }  }
+puts f[10] # 15
+a = 100
+puts f[10] # 15
+```
+
+### Wolfram Language (Mathematica)
+
+Using `With` or `Module` we can capture the values of variables:
+
+{% highlight mathematica %}
+a = 5
+f = With[{a = a}, Function[{x}, x + a]] (* Module could also be used *)
+Print[f[10]]   (* 15 *)
+a = 100
+Print[f[10]]   (* 15 * )
+{% endhighlight %}
+
+{% comment %}
+A space character is inserted in the final closing comment delimiter
+of the previous code to avoid breaking Atom's syntax highlight.
+{% endcomment %}
+
+## Deeply mutable objects
+
+Here we take a look at other cases where, as we've screen
+in JavaScript or Ruby, the language is not really protecting closures
+from accessing mutable state if indirection is used to access data.
+
+### Java
+
+Note that Java protection against using non-(effectively)-final variables in lambdas is not “deep”, so that the mutable behaviour can be achieved just by wrapping the variables.
+
+In Java 8 we can have:
+
+```java
+public class Test
+{
+  interface Ftype { public Integer call(Integer x); }
+  static class Wrapper {
+    public int value = 10;
+         }
+  public static void main(String[] args)
+  {
+    Wrapper a = new Wrapper();
+    a.value = 5;
+    Ftype f = (x) -> x+a.value;
+    System.out.println(f.call(10)); // 15
+    a.value = 100;
+    System.out.println(f.call(10)); // 110
+  }
+}
+```
+
+Similarly, in any Java version:
+
+```java
+public class Test
+{
+  interface Ftype { public int call(int x); }
+  static class Wrapper {
+    public int value = 10;
+         }
+  public static void main(String[] args)
+  {
+    final Wrapper a = new Wrapper();
+    a.value = 5;
+    Ftype f = new Ftype() {
+       public int call(int x) { return a.value+x; };
+    };
+    System.out.println(f.call(10)); // 15
+    a.value = 100;
+    System.out.println(f.call(10)); // 110
+  }
+}
+```
+
+### C++
+
+In C++, an array captured by value is actually immutable:
+
+```cpp
+#include <iostream>
+int main() {
+  int a[1] = {5};
+  auto f = [=] (int x) { return x + a[0]; }; // or [a] ...
+  std::cout << f(10) << std::endl; // 15
+  a[0] = 100;
+  std::cout << f(10) << std::endl; // 15
+  return 0;
+}
+```
+
+But using pointers will defeat the mutability protection:
+
+```cpp
+#include <iostream>
+int main() {
+  int *a = new int;
+  *a = 5;
+  auto f = [=] (int x) { return x + *a; }; // or [a] ...
+  std::cout << f(10) << std::endl; // 15
+  *a = 100;
+  std::cout << f(10) << std::endl; // 110
+  return 0;
+}
+```

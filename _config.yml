@@ -1,0 +1,23 @@
+# Site settings
+title: jgoizueta
+email: jgoizueta@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Notes to myself.
+baseurl: "" # the subpath of your site, e.g. /blog/
+# url: "http://jgoizueta.com" # the base hostname & protocol for your site
+url : "http://localhost:4000"
+#twitter_username: jekyllrb
+github_username:  jgoizueta
+
+# Build settings
+markdown: kramdown
+keep_files: ['downloads']
+kramdown:
+  input: GFM
+  # extensions: [ "fenced_code_blocks" ]
+  enable_coderay: true
+  coderay_line_numbers: nil
+  # coderay_css: class
+
+redcarpet:
+  extensions: [ "no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data" ]
