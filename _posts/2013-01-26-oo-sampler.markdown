@@ -792,6 +792,33 @@ fn main() {
 }
 ```
 
+## Julia [2012]
+
+```julia
+type Point{T<:Real}
+  x::T
+  y::T
+
+  # Point(x,y) = new(x,y)
+end
+p = Point(10,20)
+println("Point: $(p.x) $(p.y)")
+```
+
+## Rust [2012]
+
+```rust
+struct Point {
+  x: int,
+  y: int,
+}
+
+fn main() {
+  let p = Point{ x: 10, y: 20 };
+  println!("Point: {} {}", p.x, p.y);
+}
+```
+
 ## Swift [2014]
 
 ```swift
