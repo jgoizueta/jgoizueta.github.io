@@ -2,7 +2,7 @@
 layout: post
 title:  "Anonymous functions syntax cheatsheet"
 date:   2014-11-27 22:46:00
-categories: languages cheatsheet
+categories: languages cheatsheets
 ---
 
 Here's the syntax to define and call anonymous functions (lambdas)
