@@ -98,11 +98,11 @@ to have a merged single cell for them using `rowspan`.
 
 Instead of:
 
-![Table with repeating values]({{ site.url }}/assets/table_no_grouping.png)
+![Table with repeating values](/assets/table_no_grouping.png)
 
 We might prefer:
 
-![Table with merged cells]({{ site.url }}/assets/table_grouping.png)
+![Table with merged cells](/assets/table_grouping.png)
 
 
 We can solve this with our helpers by adding some option to the columns
@@ -209,12 +209,12 @@ in two columns:
 
 This could result in something like this:
 
-![Table with uneven rows]({{ site.url }}/assets/table_grouping2a.png)
+![Table with uneven rows](/assets/table_grouping2a.png)
 
 This may not be what we want. Usually, specially if columns appear in sorting
 order we'd prefer mergec cells to run across preceding column's cells:
 
-![Table with uneven rows]({{ site.url }}/assets/table_grouping2b.png)
+![Table with uneven rows](/assets/table_grouping2b.png)
 
 We add an option to avoid this case:
 
