@@ -15,6 +15,7 @@ kramdown:
   input: GFM
   hard_wrap: false
   # extensions: [ "fenced_code_blocks" ]
+  extensions: ['autolink', 'footnotes', 'smart']
   enable_coderay: true
   coderay_line_numbers: nil
   # coderay_css: class
