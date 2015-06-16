@@ -11,7 +11,7 @@ the values.
 
 For example, in a Rails view, if we use some logic to exclude a column we must repeat the logic for the header and the values.
 
-```erb
+{% highlight erb %}
 <table>
   <tr>
     <th>Name</th>
@@ -28,19 +28,19 @@ For example, in a Rails view, if we use some logic to exclude a column we must r
     </tr>
   <% end %>
 </table>
-```
+{% endhighlight %}
 
 But, since we're not really writing HTML; we're *generating* it
 with Ruby, we can arrange things in a better way. We can
 put some lambdas to good use here and take advantace of the
 nice Ruby syntax to write our table as:
 
-```erb
+{% highlight erb %}
 <%= table_by_columns(@records) do %>
   <% table_column('Name') { |record| record.name } %>
   <% table_column('Date') { |record| record.date } unless no_dates %>
 <% end %>
-```
+{% endhighlight %}
 
 To achieve this convenient syntax we just need a couple of helpers.
 We define `table_by_columns` passing a block to it
@@ -52,7 +52,7 @@ for which the column value is to be generated.
 The data for each column is kept and used by `table_by_columns`
 to generate the table after the block executes.
 
-```ruby
+{% highlight ruby %}
 module TableByColumnsHelper
 
   def table_by_columns(records, *cls, &blk)
@@ -85,7 +85,7 @@ module TableByColumnsHelper
   end
 
 end
-```
+{% endhighlight %}
 
 Ugh, did you notice the odd parentheses around the second `:tr`?
 
@@ -111,12 +111,12 @@ We might prefer:
 We can solve this with our helpers by adding some option to the columns
 we want to merge in that way:
 
-```erb
+{% highlight erb %}
 <%= table_by_columns(@records) do %>
   <% table_column('Name', grouping: true) { |record| record.name } %>
   <% table_column('Date') { |record| record.date } %>
 <% end %>
-```
+{% endhighlight %}
 
 The problem to do this is we cannot generate a `td`
 until we know how many consecutive rows will have the same value.
@@ -135,7 +135,7 @@ That `concat_content_tag` method is defined first because
 I don't want more odd parentheses!
 
 
-```ruby
+{% highlight ruby %}
 module TableByColumnsHelper
 
     def concat_content_tag(*args, &blk)
@@ -196,19 +196,19 @@ module TableByColumnsHelper
     end
 
   end
-```
+{% endhighlight %}
 
 We had to complicate a bit those helpers, but our views are still nice and clean.
 
 There's still one thing we can improve, say we're using our cell-merging
 in two columns:
 
-```erb
+{% highlight erb %}
 <%= table_by_columns(@records) do %>
   <% table_column('Name', grouping: true) { |record| record.name } %>
   <% table_column('Date', grouping: true) { |record| record.date } %>
 <% end %>
-```
+{% endhighlight %}
 
 This could result in something like this:
 
@@ -221,16 +221,16 @@ order we'd prefer mergec cells to run across preceding column's cells:
 
 We add an option to avoid this case:
 
-```erb
+{% highlight erb %}
 <%= table_by_columns(@records, nested_grouping: true) do %>
   <% table_column('Name', grouping: true) { |record| record.name } %>
   <% table_column('Date', grouping: true) { |record| record.date } %>
 <% end %>
-```
+{% endhighlight %}
 
 around fix our helpers to support that option:
 
-```ruby
+{% highlight ruby %}
 module TableByColumnsHelper
 
     def concat_content_tag(*args, &blk)
@@ -296,4 +296,4 @@ module TableByColumnsHelper
     end
 
   end
-```
+{% endhighlight %}
