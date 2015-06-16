@@ -82,25 +82,25 @@ Roughly corresponding to the editions of TC++PL
 
 ### Cfront 2.0
 
-  multiple inheritance
-  type-safe linkage
-  abstract classes
-  static member functions
-  const member functions
-  protected members (Cfront 1.2)
-  generalized initializers, base and member initializers
-  overloading ->
-  pointers tomembers (Cfront 1.2)
+* multiple inheritance
+* type-safe linkage
+* abstract classes
+* static member functions
+* const member functions
+* protected members (Cfront 1.2)
+* generalized initializers, base and member initializers
+* overloading ->
+* pointers tomembers (Cfront 1.2)
 
 ### ARM
 
-  templates
-  exception handling
-  nested classes
-  independent prefix/postfix ++ overloading
-  initialization of local static arrays allowed
-  volatile
-  (implemented in Cfront 3.0 except for exceptions)
+* templates
+* exception handling
+* nested classes
+* independent prefix/postfix ++ overloading
+* initialization of local static arrays allowed
+* volatile
+* (implemented in Cfront 3.0 except for exceptions)
 
 ### TC++PL2
 
