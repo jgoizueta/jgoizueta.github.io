@@ -2,7 +2,7 @@
 layout: post
 title:  "C++ Versions Cheatsheet"
 date:   2015-01-07 18:51:00
-categories: languages revisions releases cheatsheets
+categories: languages
 ---
 
 ## Before the standad

@@ -2,7 +2,7 @@
 layout: post
 title:  "Rails Table Helpers"
 date:   2015-06-14 20:36:00
-categories: rails ruby
+categories: techniques
 ---
 
 Tables in HTML are defined row-wise.
@@ -30,7 +30,10 @@ For example, in a Rails view, if we use some logic to exclude a column we must r
 </table>
 ```
 
-We can do better thanks to to power of lambdas an the convinience of Ruby syntax.
+But, since we're not really writing HTML; we're *generating* it
+with Ruby, we can arrange things in a better way. We can
+put some lambdas to good use here and take advantace of the
+nice Ruby syntax to write our table as:
 
 ```erb
 <%= table_by_columns(@records) do %>

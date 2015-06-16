@@ -2,7 +2,7 @@
 layout: post
 title:  "Class definition"
 date:   2013-01-26 18:13:00
-categories: languages cheatsheet
+categories: languages
 ---
 
 Here's a very simple OO chore written in many languages:
