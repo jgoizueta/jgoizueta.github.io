@@ -7,6 +7,8 @@ categories: languages
 
 Ruby (MRI) most relevant versions.
 
+|    |    |
+| --- | --- |
 | **Ruby 1.8.0**
 | 2003-08
 ||  `class.allocate`

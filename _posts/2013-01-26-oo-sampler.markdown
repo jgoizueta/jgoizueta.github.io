@@ -25,7 +25,7 @@ used here.
 
 ## Simula [1964; 1967]
 
-```simula
+```
 begin
 
 class Point(x, y); integer x, y;
@@ -103,7 +103,7 @@ int main() {
 
 ## CLU [1974]
 
-```clu
+```
   point = cluster is create, get_x, get_y
     rep = record [ x: int, y: int ]
 
@@ -384,7 +384,7 @@ end
 
 ## Self [1987]
 
-```self
+```
 ( |     parent* = traits point.
         x <- 10.
         y <- 20.
@@ -430,7 +430,7 @@ puts "Point: [$p x] [$p y]"
 
 ## Magik [1989; 1990]
 
-```magik
+```
 def_slotted_exemplar(:Point, {
   {:x, 0}, {:y, 0}
 })

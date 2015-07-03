@@ -9,7 +9,7 @@ url : "http://www.jgoizueta.net"
 github_username:  jgoizueta
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 keep_files: ['downloads']
 kramdown:
   input: GFM
@@ -19,4 +19,5 @@ kramdown:
   extensions: ['autolink', 'footnotes', 'smart']
 
 redcarpet:
-  extensions: [ "no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data" ]
+  input: GFM
+  extensions: [ "tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "with_toc_data" ]
