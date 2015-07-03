@@ -13,10 +13,10 @@ markdown: kramdown
 keep_files: ['downloads']
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
   hard_wrap: false
-  # extensions: [ "fenced_code_blocks" ]
   extensions: ['autolink', 'footnotes', 'smart']
+
+highlighter: nil
 
 redcarpet:
   extensions: [ "no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data" ]
