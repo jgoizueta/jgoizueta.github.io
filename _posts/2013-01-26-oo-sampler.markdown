@@ -25,7 +25,7 @@ used here.
 
 ## Simula [1964; 1967]
 
-```
+```simula
 begin
 
 class Point(x, y); integer x, y;
@@ -103,7 +103,7 @@ int main() {
 
 ## CLU [1974]
 
-```
+```clu
   point = cluster is create, get_x, get_y
     rep = record [ x: int, y: int ]
 
@@ -197,7 +197,7 @@ end Main;
 class Point {
   public:
   int x, y;
-  Point(int xv=0, int yv=0) { // :x(xv), y(yv)
+  Point(int xv=0, int yv=0) {
     x = xv;
     y = yv;
   }
@@ -213,7 +213,7 @@ std::cout << "Point: " << p.x << " " << p.y << std::endl;
 }
 
 // Heap objects
-Point *p = new Point(10, 20);
+Point * p = new Point(10, 20);
 std::cout << "Point: " << p->x << " " << p->y << std::endl;
 delete p;
 
@@ -242,7 +242,7 @@ std::cout << "Point: " << p.get_x() << " " << p.get_y() << std::endl;
 
 ## Objective-C [1983]
 
-```objective-c
+```objectivec
 #import <stdio.h>
 #import <objc/Object.h>
 
@@ -274,8 +274,8 @@ std::cout << "Point: " << p.get_x() << " " << p.get_y() << std::endl;
 @end
 
 int main(void) {
-  // Point *point = [[Point new] x:10 y:20];
-  Point *point = [Point newWithX:10 AndY:20];
+  // Point * point = [[Point new] x:10 y:20];
+  Point * point = [Point newWithX:10 AndY:20];
   printf("Point: %d %d\n", [point x], [point y]);
 
   return 0;
@@ -384,7 +384,7 @@ end
 
 ## Self [1987]
 
-```
+```self
 ( |     parent* = traits point.
         x <- 10.
         y <- 20.
@@ -430,7 +430,7 @@ puts "Point: [$p x] [$p y]"
 
 ## Magik [1989; 1990]
 
-```
+```magick
 def_slotted_exemplar(:Point, {
   {:x, 0}, {:y, 0}
 })
