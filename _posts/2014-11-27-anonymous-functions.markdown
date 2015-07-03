@@ -17,488 +17,488 @@ in a variety of programming languages (which I'm more or less interested in).
 Assign anonymous function to `f` defined
 as the sum of its two arguments:
 
-{% highlight elixir %}
+```elixir
 f = fn x, y -> x + y end
-{% endhighlight %}
+```
 
 Call the function assigned to `f` with arguments `1`
 and `2`:
 
-{% highlight elixir %}
+```elixir
 f.(1, 2)
-{% endhighlight %}
+```
 
 Shortcut notation:
 
-{% highlight elixir %}
+```elixir
 f = &(&1 + &2)
-{% endhighlight %}
+```
 
 # Erlang
 
 Definition:
 
-{% highlight erlang %}
+```erlang
 F = fun(X, Y) -> X + Y end
-{% endhighlight %}
+```
 
 Use (invocation):
 
-{% highlight erlang %}
+```erlang
 F(1, 2)
-{% endhighlight %}
+```
 
 
 # Julia
 
 Definition:
 
-{% highlight julia %}
+```julia
 f = (x, y) -> x + y
-{% endhighlight %}
+```
 
 Multiline `block(x,y)` definition:
 
-{% highlight julia %}
+```julia
 f = (x, y) -> begin
   block(x,y)
 end
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight julia %}
+```julia
 f(1, 2)
-{% endhighlight %}
+```
 
 Single argument case (parentheses can be omitted):
 
-{% highlight julia %}
+```julia
 x -> expr(x)
-{% endhighlight %}
+```
 
 Block syntax: a closure first argument
 (of some function `receiver`) can be passed
 outside the parenthesis with do notation:
 
-{% highlight julia %}
+```julia
 receiver() do x, y
   block(x,y)
 end
-{% endhighlight %}
+```
 
 
 named function definition:
 
-{% highlight julia %}
+```julia
 f(x,y) = x + y
 function f(x,y)
   x + y
 end  
-{% endhighlight %}
+```
 
 # Swift
 
-{% highlight swift %}
+```swift
 let f = { (x: Int, y: Int) -> Int in x + y }
-{% endhighlight %}
+```
 
-{% highlight swift %}
+```swift
 let f = { (x: Int, y: Int) -> Int in x + y }
-{% endhighlight %}
+```
 
 Implicit return type:
 
-{% highlight swift %}
+```swift
 { (x: Int, y: Int) in x + y }
-{% endhighlight %}
+```
 
 Shorthand:
 
-{% highlight swift %}
+```swift
 let f:(Int, Int) -> Int = { $0 + $1 }
-{% endhighlight %}
+```
 
 Trailing syntax: a closure last argument
 ca be passed outside the parentheses:
 (here the parentheses could be ommitted since there aren't any other arguments)
 
-{% highlight julia %}
+```julia
 receiver() {
   block($0,$1)
 }
-{% endhighlight %}
+```
 
 Or, with explicit arguments:
 
-{% highlight julia %}
+```julia
 receiver {
   (x: Int, y: Int) -> Int in
   block(x,y)
 }
-{% endhighlight %}
+```
 
 # Ruby
 
 Assignment, with several alternative syntaxes:
 
-{% highlight ruby %}
+```ruby
 f = ->(x, y){ x + y }
 f = lambda{ |x,y| x + y }
 f = proc{ |x,y| x + y }
 f = lambda do |x,y| x + y end
 f = proc do |x,y| x + y end
-{% endhighlight %}
+```
 
 Invocation, with alternative syntaxes:
 
-{% highlight ruby %}
+```ruby
 f[1,2]
 f.call(1,2)
 f.(1,2)
-{% endhighlight %}
+```
 
 Passing as a block to a `receiver` method with do notation:
 
-{% highlight ruby %}
+```ruby
 receiver do |x,y|
   block(x,y)
 end
-{% endhighlight %}
+```
 
 With curly braces:
 
-{% highlight ruby %}
+```ruby
 receiver { |x,y|
   block(x,y)
 }
-{% endhighlight %}
+```
 
 Passing an anonymous function as a block:
 
-{% highlight ruby %}
+```ruby
 receiver &f
-{% endhighlight %}
+```
 
 # CoffeeScript
 
 Definition, single line:
 
-{% highlight coffeescript %}
+```coffeescript
 f = (x, y) -> x + y
-{% endhighlight %}
+```
 
 Definition, indented block:
 
-{% highlight coffeescript %}
+```coffeescript
 f = (x, y) ->
   block(x,y)
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight coffeescript %}
+```coffeescript
 f(1, 2)
-{% endhighlight %}
+```
 
 # JavaScript
 
 Definition:
 
-{% highlight javascript %}
+```javascript
 f = function(x, y) { return x + y }
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight javascript %}
+```javascript
 f(1, 2)
-{% endhighlight %}
+```
 
 # Dart
 
 Definition:
 
-{% highlight dart %}
+```dart
 f = (x, y) => x + y
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight dart %}
+```dart
 f(1, 2)
-{% endhighlight %}
+```
 
 # Go
 
 Definition:
 
-{% highlight go %}
+```go
 f := func(x, y int) int { return x + y }
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight go %}
+```go
 f(1, 2)
-{% endhighlight %}
+```
 
 # C#
 
 Definition:
 
-{% highlight csharp %}
+```csharp
 delegate int f_type(int x, int y);
 f_type f = (x, y) => x + y;
-{% endhighlight %}
+```
 
 Definition with multiline block:
 
-{% highlight csharp %}
+```csharp
 delegate int f_type(int x, int y);
 f_type f = (x, y) => { block(x,y); }
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight csharp %}
+```csharp
 f(1, 2)
-{% endhighlight %}
+```
 
 # C++11
 
 Definition:
 
-{% highlight c++ %}
+```c++
 auto f = [=] (intx, int y) -> int { return x + y; };
-{% endhighlight %}
+```
 
 Definition with implicit return type
 
-{% highlight c++ %}
+```c++
 auto f = [=] (intx, int y) { return x + y; };
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight c++ %}
+```c++
 f(1, 2)
-{% endhighlight %}
+```
 
 # Java 8
 
 Definition:
 
-{% highlight java %}
+```java
 interface Ftype {
   public Integer call(Integer x, Integer y);
 }
 Ftype f = (x, y) -> x + y;
-{% endhighlight %}
+```
 
 
 Invocation:
 
-{% highlight java %}
+```java
 f.call(1, 2)
-{% endhighlight %}
+```
 
 # Groovy
 
 Definition:
 
-{% highlight groovy %}
+```groovy
 def f = { x ,y -> x + y }
-{% endhighlight %}
+```
 
 
 Invocation:
 
-{% highlight groovy %}
+```groovy
 f(1, 2)
-{% endhighlight %}
+```
 
 # Haskell
 
 Definition:
 
-{% highlight haskell %}
+```haskell
 f = \x y -> x + y
-{% endhighlight %}
+```
 
 
 Invocation:
 
-{% highlight haskell %}
+```haskell
 f 1, 2
-{% endhighlight %}
+```
 
 # Python
 
 Definition:
 
-{% highlight python %}
+```python
 f = lambda x, y: x + y
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight python %}
+```python
 f(1, 2)
-{% endhighlight %}
+```
 
 # Lisp (Scheme)
 
 Definition:
 
-{% highlight lisp %}
+```lisp
 (define f (lambda (x y) (+ x y)))
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight lisp %}
+```lisp
 (f 1 2)
-{% endhighlight %}
+```
 
 # Clojure
 
 Definition:
 
-{% highlight clojure %}
+```clojure
 (def f (fn [x y] (+ x y)))
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight clojure %}
+```clojure
 (f 1 2)
-{% endhighlight %}
+```
 
 # Lua
 
 Definition:
 
-{% highlight lua %}
+```lua
 f = function(x,y) return x + y end
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight lua %}
+```lua
 f(1, 2)
-{% endhighlight %}
+```
 
 # Mathematica / Wolfram Language
 
 Definition:
 
-{% highlight mathematica %}
+```mathematica
 f = Function[{x, y}, x + y]
-{% endhighlight %}
+```
 
 Shortcut:
 
-{% highlight mathematica %}
+```mathematica
 f = (#1 + #2)&
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight mathematica %}
+```mathematica
 f[1, 2]
-{% endhighlight %}
+```
 
 # R
 
 Definition:
 
-{% highlight r %}
+```r
 f <- function(x, y) x + y
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight r %}
+```r
 f(1, 2)
-{% endhighlight %}
+```
 
 # Scala
 
 Definition:
 
-{% highlight scala %}
+```scala
 val f = (x: Integer, y: Integer) => x + y
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight scala %}
+```scala
 f(1, 2)
-{% endhighlight %}
+```
 
 # Smalltalk
 
 Definition:
 
-{% highlight smalltalk %}
+```smalltalk
 f := [ :x :y | x + y ].
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight smalltalk %}
+```smalltalk
 f value: 1 value: 2
-{% endhighlight %}
+```
 
 # Matlab / GNU Octave
 
 Definition:
 
-{% highlight matlab %}
+```matlab
 f = @(x,y) x + y
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight matlab %}
+```matlab
 f(1, 2)
-{% endhighlight %}
+```
 
 
 # Perl 5
 
 Definition:
 
-{% highlight perl %}
+```perl
 my $f = sub { my $x = shift; my $ y = shift; return x + y; };
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight perl %}
+```perl
 $f->(1, 2)
-{% endhighlight %}
+```
 
 # Perl 6
 
 Definition:
 
-{% highlight perl %}
+```perl
 my $f = -> $x, $y { x + y };
-{% endhighlight %}
+```
 
 Shortcut (twigil parameters)
 
-{% highlight perl %}
+```perl
 my $f = { $^x + $^y };
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight perl %}
+```perl
 $f->(1, 2)
-{% endhighlight %}
+```
 
 # Magik
 
@@ -525,15 +525,15 @@ Alternative invocation:
 
 Definition:
 
-{% highlight ocaml %}
+```ocaml
 let f x y = x + y;;
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight ocaml %}
+```ocaml
 f 1 2
-{% endhighlight %}
+```
 
 # HP PPL CAS (GIAC/XCAS)
 
@@ -573,29 +573,29 @@ Invocation:
 
 Definition:
 
-{% highlight php %}
+```php
 $f = function($x, $y) { return $x+$y; };
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight php %}
+```php
 $f(1, 2)
-{% endhighlight %}
+```
 
 # TCL
 
 Definition:
 
-{% highlight tcl %}
+```tcl
 set f { {x y} {expr {($x+$y)} } }
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight tcl %}
+```tcl
 apply $f 1 2
-{% endhighlight %}
+```
 
 # Maxima
 
@@ -611,9 +611,9 @@ Invocation:
 
 Definition (note: f_lambda is an arbitrary identifier):
 
-{% highlight c++ %}
+```c++
 int (*f)(int x, int y) = ({ int f_lambda(int x, int y) { return x + y; } &f_lambda; }); //*
-{% endhighlight %}
+```
 
 {% comment %}
 The comment with an asterisk is there in the previous and following snippets
@@ -622,45 +622,45 @@ to avoid breaking Atom's syntax highlight.
 
 Invocation:
 
-{% highlight c++ %}
+```c++
 (*f)(1, 2) //*
-{% endhighlight %}
+```
 
 # Visual Basic.NET
 
 Definition
 
-{% highlight basic %}
+```basic
 Dim f = Function(x,y) x + y
-{% endhighlight %}
+```
 
 Definition (multiline block)
 
-{% highlight basic %}
+```basic
 Dim f = Function(x,y)
   block(x,y)
 End Function
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight basic %}
+```basic
 f(1, 2)
-{% endhighlight %}
+```
 
 # Factor
 
 Definition
 
-{% highlight factor %}
+```factor
 CONSTANT: f [ + ]
-{% endhighlight %}
+```
 
 Invocation:
 
-{% highlight factor %}
+```factor
 1 2 f call
-{% endhighlight %}
+```
 
 # RPL
 

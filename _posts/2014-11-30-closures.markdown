@@ -42,17 +42,17 @@ console.log(f(10)); // 110
 
 ### CoffeeScript
 
-{% highlight coffeescript %}
+```coffeescript
 a = 5
 f = (x)->x+a
 console.log f(10) # 15
 a = 100
 console.log f(10) # 110
-{% endhighlight %}
+```
 
 ### Dart
 
-{% highlight dart %}
+```dart
 void main() {
   var a = 5;
   var f = (x) => x + a;
@@ -60,7 +60,7 @@ void main() {
   a = 100;
   print(f(10)); // 110
 }
-{% endhighlight %}
+```
 
 ### Ruby
 
@@ -84,27 +84,27 @@ print(f(10)) # 110
 
 ### Julia
 
-{% highlight julia %}
+```julia
 a = 5
 f = (x) -> x+a
 print(f(10)) # 15
 a = 100
 print(f(10)) # 110
-{% endhighlight %}
+```
 
 ### Swift
 
-{% highlight swift %}
+```swift
 var a = 5
 let f = { (x: Int) -> Int in x+a }
 println(f(10)) // 15
 a = 100
 println(f(10)) // 110
-{% endhighlight %}
+```
 
 ### C\#
 
-{% highlight csharp %}
+```csharp
 using System;
 public class Test
 {
@@ -118,11 +118,11 @@ public class Test
     System.Console.WriteLine(f(10)); // 110
   }
 }
-{% endhighlight %}
+```
 
 ### Go
 
-{% highlight go %}
+```go
 package main
 import "fmt"
 func main(){
@@ -132,7 +132,7 @@ func main(){
 	a = 100
 	fmt.Println(f(10)) // 110
 }
-{% endhighlight %}
+```
 
 ### Groovy
 
@@ -147,55 +147,55 @@ println f(10) // 110
 
 ### R
 
-{% highlight r %}
+```r
 a <- 5
 f <- function(x)x+a
 cat("%d", f(10)) # 15
 a <- 100
 cat("%d",f(10)) # 110
-{% endhighlight %}
+```
 
 ### Perl 5
 
-{% highlight perl %}
+```perl
 my $a = 5;
 my $f = sub { my $x = shift; return $x+$a };
 print $f->(10), "\n"; # 15
 $a = 100;
 print $f->(10), "\n"; # 110
-{% endhighlight %}
+```
 
 ### Perl 6
 
-{% highlight perl %}
+```perl
 my $a = 5;
 my $f = -> $x { $x+$a };
 print $f(10), "\n"; # 15
 $a = 100;
 print $f(10), "\n"; # 110
-{% endhighlight %}
+```
 
 ### Lua
 
-{% highlight lua %}
+```lua
 a = 5
 f = function(x,y) return x+a end
 print(f(10)) -- 15
 a = 100
 print(f(10)) -- 110
-{% endhighlight %}
+```
 
 ### Lisp (Scheme)
 
 This has been tested with BiwaScheme & guile.
 
-{% highlight lisp %}
+```scheme
 (define a 5)
 (define f (lambda (x) (+ x a)))
 (write (f 10)) (newline) ; 15
 (define a 100)
 (write (f 10)) (newline) ; 110
-{% endhighlight %}
+```
 
 ### Clojure
 
@@ -209,17 +209,17 @@ This has been tested with BiwaScheme & guile.
 
 ### Smalltalk
 
-{% highlight smalltalk %}
+```smalltalk
 a := 5.
 f := [ :x | x + a ].
 (f value: 10) printNl.
 a := 100.
 (f value: 10) printNl !
-{% endhighlight %}
+```
 
 ### Scala
 
-{% highlight scala %}
+```scala
 object Main extends App {
 	var a = 5
 	val f = (x: Integer) => x+a
@@ -227,17 +227,17 @@ object Main extends App {
 	a = 100
 	println(f(10)) // 110
 }
-{% endhighlight %}
+```
 
 ### Wolfram Language (Mathematica)
 
-{% highlight mathematica %}
+```mathematica
 a = 5
 f = Function[x, x + a]
 Print[f[10]]   (* 15 *)
 a = 100
 Print[f[10]]   (* 110 * )
-{% endhighlight %}
+```
 
 {% comment %}
 A space character is inserted in the final closing comment delimiter
@@ -326,7 +326,7 @@ of the previous code to avoid breaking Atom's syntax highlight.
 
 Local variables must explicitly declared mutalbe with `!`
 
-{% highlight factor %}
+```factor
 USING: kernel locals formatting math ;
 IN: test_closures
 :: test-closures ( -- )
@@ -336,7 +336,7 @@ IN: test_closures
   100 a!
   10 f call "%d\n" printf ! 110
   ;
-{% endhighlight %}
+```
 
 ### HP PPL (HOME)
 
@@ -362,44 +362,44 @@ disallow mutable state to be captured in a closure.
 
 Captured variable cannot be modified
 
-{% highlight erlang %}
+```erlang
     -module(prog).
     -export([main/0]).
     main () ->
       A = 5,
       F = fun(X) -> X+A end,
       io:fwrite(io_lib:format("F(10): ~p", [F(10)])). % F(10): 15
-{% endhighlight %}
+```
 
 
 ### Elixir
 
 Can rebind a captured variable, but no actual state change can occur.
 
-{% highlight elixir %}
+```elixir
 a = 5
 f = fn(x) -> x + a end
 IO.puts f.(10) # 15
 a = 100
 IO.puts f.(10) # 15
-{% endhighlight %}
+```
 
 ### Haskell
 
 There's no way a captured variable can be modified.
 
-{% highlight haskell %}
+```haskell
 module Main where
 a = 5
 f = \x -> x+a
 main = print (f 10) -- 15
-{% endhighlight %}
+```
 
 Using `IORef` and `do` notation we might be able to simulate mutable captured variables.
 
 ### OCaml
 
-{% highlight ocaml %}
+```ocaml
 let a = 5;;
 let f x = x+a;;
 print_int(f 10);; (* 15 *)
@@ -407,7 +407,7 @@ print_string("\n");;
 a = 100;;
 print_int(f 10);; (* 15 * )
 print_string("\n");;
-{% endhighlight %}
+```
 
 {% comment %}
 A space character is inserted in the final closing comment delimiter
@@ -473,7 +473,7 @@ int main() {
 
 Using the CLang blocks extension.
 
-{% highlight objectivec %}
+```objectivec
 #import <Foundation/Foundation.h>
 int main(void) {
   int a = 5;
@@ -483,7 +483,7 @@ int main(void) {
   NSLog(@"%d", f(10)); /* 15 * /
   return 0;
 }
-{% endhighlight %}
+```
 
 {% comment %}
 A space character is inserted in the final closing comment delimiter
@@ -539,24 +539,24 @@ Called from the CAS environment.
 
 ### CoffeeScript (do)
 
-{% highlight coffeescript %}
+```coffeescript
 a = 5
 f = do (a) -> (x) -> x+a
 console.log f(10) # 15
 a = 100
 console.log f(10) # 15
-{% endhighlight %}
+```
 
 Note that this solution is of limited application: it frotects from
 rebounded variables, but not from mutable objects, e.g.:
 
-{% highlight coffeescript %}
+```coffeescript
 a = [5]
 f = do (a) -> (x) -> x+a[0]
 console.log f(10) # 15
 a[0] = 100
 console.log f(10) # 110 doh!
-{% endhighlight %}
+```
 
 ### Factor (curry)
 
@@ -638,13 +638,13 @@ puts f[10] # 15
 
 Using `With` or `Module` we can capture the values of variables:
 
-{% highlight mathematica %}
+```mathematica
 a = 5
 f = With[{a = a}, Function[{x}, x + a]] (* Module could also be used *)
 Print[f[10]]   (* 15 *)
 a = 100
 Print[f[10]]   (* 15 * )
-{% endhighlight %}
+```
 
 {% comment %}
 A space character is inserted in the final closing comment delimiter
