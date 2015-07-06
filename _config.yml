@@ -21,4 +21,4 @@ kramdown:
 redcarpet:
   extensions: [ "tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "with_toc_data" ]
 
-highlighter: nil
+highlighter:
