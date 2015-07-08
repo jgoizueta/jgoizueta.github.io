@@ -6,8 +6,15 @@ categories: languages
 ---
 
 | 1995-12 | JavaScript announced by Sun & Netscape
-| 1996-03 | Netscape Navigator 2.0
-| 1996-08 | Internet Explorer 3.0 (JScript)
+| 1996-03 | v1.0 Netscape Navigator 2.0
+| 1996-08 | v1.1 Netscape Navigator 3.0; Internet Explorer 3.0 (JScript) equivalent to v1.0
+| 1997-06 | v1.2 Netscape Navigator 4.0
+| 1998-10 | v1.3 Netscape Navigator 4.06-4.7; ES1/2
+|         | v1.4 Netscape Server
+| 2000-11 | v1.5 Netscape Navigator 6.0; Mozilla Firefox 1.0; ES3
+| 2005-11 | v1.6 Mozilla Firefox 1.5
+| 2006-10 | v1.7 Mozilla Firefox 2.0
+| 2008-06 | v1.8 Mozilla Firefox 3.0
 
 ## ECMAScript versions
 
