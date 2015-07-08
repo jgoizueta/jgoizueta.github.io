@@ -751,8 +751,6 @@ class Point
   constructor: (x, y) -> # constructor: (@x, @y) ->
     @x = x
     @y = y
-  x: 0
-  y: 0
 
 p = new Point(10, 20)
 console.log "Point: #{p.x} #{p.y}"
