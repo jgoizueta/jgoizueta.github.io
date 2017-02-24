@@ -6,8 +6,7 @@ categories: techniques
 ---
 
 Tables in HTML are defined row-wise.
-It is often annoying having to define a column's header separate from
-the values.
+It is often annoying having to define a column's header separate from the values.
 
 For example, in a Rails view, if we use some logic to exclude a column we must repeat the logic for the header and the values.
 
@@ -46,7 +45,7 @@ To achieve this convenient syntax we just need a couple of helpers.
 We define `table_by_columns` passing a block to it
 where `table_column` calls are issued to define the table columns.
 
-To define the column values a block is passed which recieves the record
+To define the column values a block is passed which receives the record
 for which the column value is to be generated.
 
 The data for each column is kept and used by `table_by_columns`
@@ -89,11 +88,10 @@ end
 
 Ugh, did you notice the odd parentheses around the second `:tr`?
 
-That's a glitch of Ruby's otherwise nice syntax. (wihtout them the `do` would
+That's a glitch of Ruby's otherwise nice syntax. (without them the `do` would
 have been attached to `concat`; we could have used curly braces for the block,
 but that's inconsistent with the rest of the code)
 We'll do something about it in the next snippets.
-
 
 Now that we have this nice helpers we can have even more convenience easily.
 Say that when consecutive rows repeat the same value for a column we'd prefer
@@ -120,20 +118,19 @@ we want to merge in that way:
 
 The problem to do this is we cannot generate a `td`
 until we know how many consecutive rows will have the same value.
-We also don't want to read the whole collection and keep data around since
+We also prefer not to read the whole collection and keep data around, since
 there may be a lot of records.
 
 An easy way to solve this is using this
 [look_ahead_iterator gem](https://github.com/jgoizueta/look_ahead_iterator)
-that allow us to prefetch values from an enumerable. The `LookAheadIterator`
+that allows us to prefetch values from an enumerable. The `LookAheadIterator`
 acts as an iterator wrapper that caches prefetched values. In the worst case
 we could end up prefetching the whole collection, but in typical use we
-expect to have to cache only a few values.
+expect to need caching only a few values.
 
 Here's the code to implement this *cell-merging*.
-That `concat_content_tag` method is defined first because
-I don't want more odd parentheses!
-
+I'll throw in that `concat_content_tag` method to get rid of those odd parentheses
+we encounter in our first try!
 
 ```ruby
 module TableByColumnsHelper
@@ -200,7 +197,7 @@ module TableByColumnsHelper
 
 We had to complicate a bit those helpers, but our views are still nice and clean.
 
-There's still one thing we can improve, say we're using our cell-merging
+There's still one thing we can improve, though. Let's say we're using our cell-merging
 in two columns:
 
 ```markup
@@ -215,11 +212,11 @@ This could result in something like this:
 ![Table with uneven rows](/assets/table_grouping2a.png)
 
 This may not be what we want. Usually, specially if columns appear in sorting
-order we'd prefer mergec cells to run across preceding column's cells:
+order, we'd prefer merged cells not to run across preceding column's cells:
 
 ![Table with uneven rows](/assets/table_grouping2b.png)
 
-We add an option to avoid this case:
+We'll add an option to avoid that case:
 
 ```markup
 <%= table_by_columns(@records, nested_grouping: true) do %>
@@ -228,7 +225,7 @@ We add an option to avoid this case:
 <% end %>
 ```
 
-around fix our helpers to support that option:
+And finally we'll fix our helpers to support the new option:
 
 ```ruby
 module TableByColumnsHelper
