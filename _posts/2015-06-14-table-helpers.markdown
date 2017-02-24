@@ -294,3 +294,6 @@ module TableByColumnsHelper
 
   end
 ```
+
+Here's is a more complete example extracted from actual production code (from an old app of mine):
+https://gist.github.com/jgoizueta/3558501b02f4448b11e60fc9d41666d9
