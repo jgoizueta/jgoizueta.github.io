@@ -245,7 +245,7 @@ module TableByColumnsHelper
       if columns.present?
         column_grouping = columns.any? { |h, v, options, row_count| row_count }
         content_tag :table, class: cls do
-          content_tag :tr do
+          concat_content_tag :tr do
             columns.each do |header, value_method, options, row_count|
               concat_content_tag :th, header
             end
