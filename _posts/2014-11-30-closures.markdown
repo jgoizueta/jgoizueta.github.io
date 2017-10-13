@@ -535,6 +535,18 @@ Called from the CAS environment.
     #end
     // in CAS: Test()
 
+### Pony
+
+```pony
+actor Main
+  new create(env: Env) =>
+    var a : U32 = 5
+    let f = {(x:U32)(a) : U32 => x + a }
+    env.out.print(f(10).string())   // 15
+    a = 100
+    env.out.print(f(10).string())   // 15
+```
+
 ## Techniques to inject immutable values in closures
 
 ### CoffeeScript (do)
