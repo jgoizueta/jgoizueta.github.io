@@ -6,5 +6,4 @@ noindex: true
 nofollow: true
 ---
 
-* [english]({{ site.url }}/downloads/jgcven.pdf)
-* [spanish]({{ site.url }}/downloads/jgcves.pdf)
+* [english]({{ site.url }}/downloads/jgoizueta.pdf)
