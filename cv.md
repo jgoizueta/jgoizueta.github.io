@@ -6,4 +6,4 @@ noindex: true
 nofollow: true
 ---
 
-* [english]({{ site.url }}/downloads/jgoizueta.pdf)
+* [english]({{ site.baseurl }}/downloads/jgoizueta.pdf)
