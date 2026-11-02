@@ -103,3 +103,7 @@ Press **Upgrade** to see the Pro options. If you've already bought Pro, for exam
 beatviz analyses the sound on your phone, while it listens. The audio is not recorded, stored or sent anywhere.
 
 Purchases are handled by Google Play and RevenueCat, which receive purchase information and an anonymous app identifier, never your audio.
+
+## Credits
+
+Beat tracking uses [BeatNet+](https://github.com/Soundbrenner/BeatNet-Plus) by Mojtaba Heydari, Frank Cwitkowitz and Zhiyao Duan, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). beatviz runs a C++ port of its model on the phone.
