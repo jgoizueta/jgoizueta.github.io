@@ -98,6 +98,18 @@ Press **Upgrade** to see the Pro options. If you've already bought Pro, for exam
 - **Music with a clear beat works best.** Dance, pop and rock are easy; rubato classical music, free jazz or ambient music may be hard to follow, even for people.
 - **If the bars follow the wrong beat**, use TAP.
 
+## How it works
+
+For the curious, here is what happens between the microphone and the bars. Everything runs on the phone.
+
+**1. Sound to features.** The microphone sound is converted to 22,050 samples per second. Every 20 ms (50 times a second), beatviz looks at the last 80 ms of sound and measures how loud it is in 144 frequency bands, from deep bass to high cymbals. It also measures how much each band has just grown louder, which highlights drum hits and note onsets. The result is a list of 288 numbers for each 20 ms frame.
+
+**2. A neural network.** These numbers go through a neural network ([BeatNet+](#credits)) trained on many recordings in which people marked every beat. For each frame it outputs three probabilities that add up to 1: that the frame is a beat, that it is a downbeat (the first beat of a bar), or neither. The network has a memory (LSTM layers), so each answer takes the recent rhythm into account, but it only ever uses sound that has already been heard, which is what lets it work in real time.
+
+**3. A particle filter.** The probabilities are noisy, so they don't decide the beat on their own. A particle filter keeps many guesses at once, each of the form "the tempo is X and we are at this point between two beats". Every frame, each guess moves forward in time; guesses that expect a beat when the network says "beat" become more likely, and guesses that don't become less likely and are replaced by copies of the better ones. When the surviving guesses agree that a beat has arrived, a beat is reported, with the current tempo. A second set of guesses works out where in the bar each beat falls, for bars of 2, 3 or 4 beats, and marks the beats that start a bar.
+
+**4. The display.** The app turns these beats into a steady grid of predicted beats. The grid follows the detections gradually, so a single wrong detection doesn't move it, keeps going through quiet passages, and is shown slightly ahead of time to make up for the moment it takes to hear and analyse each beat. Beat 1 is placed by comparing the downbeats with your beats-per-bar setting, unless you've set it yourself.
+
 ## Privacy
 
 beatviz analyses the sound on your phone, while it listens. The audio is not recorded, stored or sent anywhere.
