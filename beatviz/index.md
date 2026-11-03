@@ -102,7 +102,7 @@ Press **Upgrade** to see the Pro options. If you've already bought Pro, for exam
 
 beatviz analyses the sound on your phone, while it listens. The audio is not recorded, stored or sent anywhere.
 
-Purchases are handled by Google Play and RevenueCat, which receive purchase information and an anonymous app identifier, never your audio.
+Purchases are handled by Google Play and RevenueCat, which receive purchase information and an anonymous app identifier, never your audio. See the full [privacy policy](privacy/).
 
 ## Credits
 
