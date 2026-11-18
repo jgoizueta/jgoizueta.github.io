@@ -4,6 +4,8 @@ layout: default
 
 # beatviz user guide
 
+[Versión en español](es/)
+
 beatviz listens to music through your phone's microphone, finds the beat, and lights one bar on each beat. It shows you where the beat is, how fast it is (in beats per minute, BPM), and where each bar of the music starts.
 
 If you're a musician playing along with other musicians or recordings you may find it useful to have a visual reinforcement of the rhythm and avoid losing track of what part of the bar you're in.
@@ -28,7 +30,7 @@ From top to bottom:
 - **The BPM display.** The tempo of the music. It shows `--- BPM` until beatviz has found the beat. On its left is the **1** chip (see [Beat 1](#beat-1)); on its right, a lock icon appears when the tempo is locked (see [TAP](#helping-beatviz-with-tap)).
 - **Beats per bar:** the **−** and **+** buttons.
 - **START / STOP** and **TAP.**
-- **?**: shows the introduction slides again.
+- **?**: shows the introduction slides again. At their top left you can choose the language: **Auto** (the phone's language), **EN** (English) or **ES** (Spanish).
 
 ## How beatviz follows the music
 
